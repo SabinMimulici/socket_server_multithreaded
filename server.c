@@ -9,8 +9,19 @@
 
 void * service_client(void * p_client_socket);
 
-int main()
+int main(int argc, char *argv[])
 {
+    int port_number;
+    if(argc == 2)
+    {
+        port_number = atoi(argv[1]);
+        printf("The server port number is: %d\n", port_number);
+    }
+    else
+    {
+        perror("!Invalid parameter list!\n");
+        exit(EXIT_FAILURE);
+    }
     //create the server socket
     int server_socket;
     if((server_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -21,7 +32,7 @@ int main()
     //define server address
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
-    server_address.sin_port = htons(9002);
+    server_address.sin_port = htons(port_number);
     server_address.sin_addr.s_addr = INADDR_ANY; // to any ip address on local machine
     //bind the socket to our specified IP and port
     if(bind(server_socket, (struct sockaddr *) &server_address, sizeof(server_address)))
