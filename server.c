@@ -11,17 +11,8 @@ void * service_client(void * p_client_socket);
 
 int main(int argc, char *argv[])
 {
-    int port_number;
-    if(argc == 2)
-    {
-        port_number = atoi(argv[1]);
-        printf("The server port number is: %d\n", port_number);
-    }
-    else
-    {
-        perror("!Invalid parameter list!\n");
-        exit(EXIT_FAILURE);
-    }
+    int port_number = 8080;
+    printf("The server port number is: %d\n", port_number);
     //create the server socket
     int server_socket;
     if((server_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -69,12 +60,11 @@ int main(int argc, char *argv[])
 
 void * service_client(void * p_client_socket)
 {
-    char server_message[256] = "You have reached the server!\n";
-
+    int rand_number = rand() % 100;
     int client_socket = *(int *)p_client_socket;
     free(p_client_socket);
     //send data to client
-    send(client_socket, server_message, sizeof(server_message), 0);
+    send(client_socket, &rand_number, sizeof(rand_number), 0);
     //close socket
     close(client_socket);
 }
