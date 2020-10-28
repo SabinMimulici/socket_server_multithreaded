@@ -1,0 +1,7 @@
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/install/strip.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/install/local.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/install.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/list_install_components.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/rebuild_cache.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/edit_cache.dir
+/home/sabin/git/socket_server_multithreaded/build/CMakeFiles/server_randno.dir

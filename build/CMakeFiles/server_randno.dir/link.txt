@@ -1,0 +1,1 @@
+/usr/bin/cc -pthread  -rdynamic CMakeFiles/server_randno.dir/server.c.o  -o server_randno  -lpthread 
